@@ -1,5 +1,4 @@
-<span id="h.lfxccegk9mek" class="anchor"></span>Documentos de
-Arquitectura Software (DAS)
+Documentos de Arquitectura Software (DAS)
 
 Arquitectura Cliente Servidor 1.0
 
@@ -27,18 +26,16 @@ style="font-variant:small-caps;">INTRODUCTION </span>**
 **<span style="font-variant:small-caps;">2.</span>** **<span
 style="font-variant:small-caps;">ARCHITECTURAL REPRESENTATION </span>**
 
-<span id="h.gjdgxs" class="anchor"></span>**<span
-style="font-variant:small-caps;">3.</span>** **<span
+**<span style="font-variant:small-caps;">3.</span>** **<span
 style="font-variant:small-caps;">ARCHITECTURAL GOALS AND CONSTRAINTS
 </span>**
 
 > <span style="font-variant:small-caps;">3.1</span> <span
 > style="font-variant:small-caps;">Technical Platform </span>
 >
-> [<span style="font-variant:small-caps;">3.2</span>](#h.lnxbz9)[
-> ](#h.lnxbz9)[<span
-> style="font-variant:small-caps;">Transaction</span>](#h.lnxbz9)[
-> ](#h.lnxbz9)[](#h.lnxbz9)
+> [<span
+> style="font-variant:small-caps;">3.2</span>](#h.lnxbz9)[](#h.lnxbz9)[<span
+> style="font-variant:small-caps;">Transaction</span>](#h.lnxbz9)[](#h.lnxbz9)[](#h.lnxbz9)
 >
 > <span style="font-variant:small-caps;">3.3</span> <span
 > style="font-variant:small-caps;">Security </span>
@@ -59,9 +56,10 @@ style="font-variant:small-caps;">ARCHITECTURAL GOALS AND CONSTRAINTS
 **<span style="font-variant:small-caps;">4.</span>** **<span
 style="font-variant:small-caps;">USE-CASE VIEW </span>**
 
-> [<span style="font-variant:small-caps;">4.1</span>](#h.1y810tw)[
-> ](#h.1y810tw)[<span style="font-variant:small-caps;">Ordering
-> Menus</span>](#h.1y810tw)[ ](#h.1y810tw)[](#h.1y810tw)
+> [<span
+> style="font-variant:small-caps;">4.1</span>](#h.1y810tw)[](#h.1y810tw)[<span
+> style="font-variant:small-caps;">Ordering
+> Menus</span>](#h.1y810tw)[](#h.1y810tw)[](#h.1y810tw)
 >
 > <span style="font-variant:small-caps;">4.2</span> <span
 > style="font-variant:small-caps;">Use-Case Realizations </span>
@@ -94,15 +92,16 @@ style="font-variant:small-caps;">IMPLEMENTATION VIEW </span>**
 **<span style="font-variant:small-caps;">9.</span>** **<span
 style="font-variant:small-caps;">DATA VIEW </span>**
 
-[**<span style="font-variant:small-caps;">10.</span>**](#h.3o7alnk)[
-](#h.3o7alnk)[**<span style="font-variant:small-caps;">SIZE AND
-PERFORMANCE</span>**](#h.3o7alnk)[ ](#h.3o7alnk)[](#h.3o7alnk)
+[**<span
+style="font-variant:small-caps;">10.</span>**](#h.3o7alnk)[](#h.3o7alnk)[**<span
+style="font-variant:small-caps;">SIZE AND
+PERFORMANCE</span>**](#h.3o7alnk)[](#h.3o7alnk)[](#h.3o7alnk)
 
 **<span style="font-variant:small-caps;">11.</span>** **<span
 style="font-variant:small-caps;">QUALITY </span>**
 
-1.  **Introducción\
-    **Este documento contiene información de la arquitectura de un
+1.  **Introducción**\
+    Este documento contiene información de la arquitectura de un
     programa con la arquitectura “Cliente Servidor”.
 
 2.  Como se indica en el artículo complementario , un arquitecto de
@@ -111,8 +110,8 @@ style="font-variant:small-caps;">QUALITY </span>**
     completa , una sección específica de la DAS se enriquece en
     consecuencia.
 
-  ------------------------------------------------------------- -------------------------------------------
   **Actividades Arquitectonicas**                               **Documento de Arquitectura de Software**
+  ------------------------------------------------------------- -------------------------------------------
   Paso 1 -Identificar y priorizar casos de uso significativos   Sección 4
   Paso 2 -Definir la arquitectura candidata                     Sección 3, 5.1, 10, 11
   Paso 3 - Definir el modelo de despliegue inicial              Sección 7
@@ -121,9 +120,6 @@ style="font-variant:small-caps;">QUALITY </span>**
   Paso 6 - Crear el Modelo de Diseño                            Sección 5
   Paso 7 - Documentar mecanismos de concurrencia                Sección 6, 7
   Paso 8 - Crear el modelo de Implementación                    Sección 8
-  ------------------------------------------------------------- -------------------------------------------
-
-<span id="h.1fob9te" class="anchor"></span>
 
 Propósito
 ---------
@@ -139,43 +135,31 @@ Con el fin de representar el software con la mayor precisión posible, la
 estructura de este documento se basa en el modelo de vistas
 arquitectónicas"4 + 1 ".
 
-> ![](./media/image1.png)
-
 El Modelo " 4 + 1 " permite a las diversas partes interesadas encontrar
 lo que necesitan en la arquitectura de software .
-
-> <span id="h.2et92p0" class="anchor"></span>
 
 Alcance.
 --------
 
-<span id="h.ikcoyflh32zk" class="anchor"></span>\
 Lo que se pretende realizar con esta aplicación se detalla en los
 siguientes puntos
 
-<span id="h.5y478xsb36ea" class="anchor"></span>
+-   Se pretende crear un sitio web para la publicación e información de
+    un congreso a los usuarios, la información contenida en el sitio
+    será actualizable.
 
--   <span id="h.koyl2txl397j" class="anchor"></span>Se pretende crear un
-    sitio web para la publicación e información de un congreso a los
-    usuarios, la información contenida en el sitio será actualizable.
+-   Permitir a los usuarios llenar y guardar la información de un
+    formulario que contiene sus datos personales, además de un aporte
+    personal del usuario acerca del resumen del congreso.
 
--   <span id="h.cv253yaayb3b" class="anchor"></span>Permitir a los
-    usuarios llenar y guardar la información de un formulario que
-    contiene sus datos personales, además de un aporte personal del
-    usuario acerca del resumen del congreso.
+-   Permitir tener un administrador que ingrese con un usuario y
+    contraseña.
 
--   <span id="h.ju509cd1itkj" class="anchor"></span>Permitir tener un
-    administrador que ingrese con un usuario y contraseña.
+-   Permitir que el administrador pueda generar reportes de los aportes
+    hechos por los usuarios
 
--   <span id="h.cgypfpj69mvk" class="anchor"></span>Permitir que el
-    administrador pueda generar reportes de los aportes hechos por los
-    usuarios
-
--   <span id="h.tyjcwt" class="anchor"></span>permitir que el
-    administrador pueda actualizar la información tanto del sitio como
-    sus propios datos.
-
-<span id="h.3dy6vkm" class="anchor"></span>
+-   permitir que el administrador pueda actualizar la información tanto
+    del sitio como sus propios datos.
 
 Definiciones, Siglas y abreviaturas
 -----------------------------------
@@ -184,16 +168,14 @@ Definiciones, Siglas y abreviaturas
 
 **DAS:** Docuementación de la Arquitecura del software.
 
-<span id="h.1t3h5sf" class="anchor"></span>
+NUEVA: NUEVA
 
 Referencias
 -----------
 
-> [KRU41]: La vista del modelo arquitectónico de software " 4 + 1 ",
 > Philippe Kruchten , noviembre de 1995,
 
-*http://www3.software.ibm.com/ibmdl/pub/software/rational/web/whitepapers/2003/Pbk4p1.pdf*[](http://www3.software.ibm.com/ibmdl/pub/software/rational/web/whitepapers/2003/Pbk4p1.pdf)<span
-id="h.2s8eyo1" class="anchor"></span>
+*http://www3.software.ibm.com/ibmdl/pub/software/rational/web/whitepapers/2003/Pbk4p1.pdf*[](http://www3.software.ibm.com/ibmdl/pub/software/rational/web/whitepapers/2003/Pbk4p1.pdf)
 
 Revisión
 --------
@@ -217,10 +199,8 @@ Revisión
 > Sección 11 : describe los aspectos relacionados con la calidad de
 > servicio atributos ( QoS).
 
-<span id="h.17dp8vu" class="anchor"></span>
-
-Representación arquitectónica 
-==============================
+Representación arquitectónica
+=============================
 
 > En este documento se detalla la arquitectura utilizando las vistas
 > definidas en el modelo de " 4 + 1 " [ KRU41 ] , pero utilizando la
@@ -286,15 +266,11 @@ Representación arquitectónica
 >
 > ***Artefactos relacionados***: Modelo de casos de uso.
 
-<span id="h.3rdcrjn" class="anchor"></span>
-
 Objetivos de arquitectura y limitaciones.
 =========================================
 
 > En esta sección se describen los requisitos de software y los
 > objetivos que tienen algún impacto significativo en la arquitectura.
->
-> <span id="h.26in1rg" class="anchor"></span>
 
 Plataforma Técnica.
 -------------------
@@ -304,15 +280,11 @@ Plataforma Técnica.
 > servidor PHP, Lenguaje javascript, una libreria para generacion de
 > reportes PhpExcel.
 
-<span id="h.lnxbz9" class="anchor"></span>
-
 Transacción
 -----------
 
 > El programa “Cliente Servidor” es transaccional, el aprovechamiento de
 > las capacidades de la plataforma técnica. Apache.
-
-<span id="h.35nkun2" class="anchor"></span>
 
 Seguridad
 ---------
@@ -322,14 +294,11 @@ Seguridad
 > Integridad de los datos : Los datos enviados a través de la red no
 > puede ser modificado por un nivel
 
-<span id="h.44sinio" class="anchor"></span>
-
 Fiabilidad / disponibilidad ( failover )
 ----------------------------------------
 
-> <span id="h.2jxsxqh" class="anchor"></span>La aplicación estará
-> disponible las 24 horas del día, siempre y cuando exista un congreso
-> en curso, de otra manera no estará disponible.
+> La aplicación estará disponible las 24 horas del día, siempre y cuando
+> exista un congreso en curso, de otra manera no estará disponible.
 
 Rendimiento
 -----------
@@ -337,8 +306,6 @@ Rendimiento
 El proceso de Envió de formularios debe tener menos de 5 segundos.
 
 El proceso de generación de reportes deber tener menos de 1 minuto.
-
-<span id="h.3j2qqm3" class="anchor"></span>
 
 Vista De Escenarios
 ===================
@@ -369,32 +336,21 @@ Vista De Escenarios
 -   Generar Reportes: El “Administrador” generar los reportes de las
     participaciones de los usuario.
 
-![](./media/image2.png)
-
-<span id="h.4i7ojhp" class="anchor"></span>
-
 4.1. Actores
 ------------
 
--   <span id="h.5570hcm7mg9m" class="anchor"></span>Administrador: Se
-    encarga de generar reportes, así como gestionar información en la
-    base de datos
+-   Administrador: Se encarga de generar reportes, así como gestionar
+    información en la base de datos
 
 -   Usuario: Este podrá gestionar a los clientes y envían el formulario.
 
-<span id="h.2xcytpi" class="anchor"></span>
-
-<span id="h.dbnqth85nk37" class="anchor"></span>**5. Vista Lógica**
+**5. Vista Lógica**
 
 > En esta vista se representa la funcionalidad que el sistema
 > proporcionara a los usuarios finales. Es decir, se ha de representar
 > lo que el sistema debe hacer, y las funciones y servicios que ofrece
 
 -   **Diagrama de Clases:**
-
-> ![](./media/image3.png)
->
-> <span id="h.8819cjmuj1hc" class="anchor"></span>
 
 6.  **Vista de Procesos**
 
@@ -406,23 +362,17 @@ sistema.
 
 -   **Diagrama de Actividades **
 
-> ![](./media/image4.png)
-
-<span id="h.qsh70q" class="anchor"></span>
-
-7. Vista de Despliegue 
-=======================
+7. Vista de Despliegue
+======================
 
 En esta vista se muestra el sistema desde la perspectiva de un
 programador y se ocupa de la gestión del software; o en otras palabras,
 se va a mostrar cómo está dividido el sistema software en componentes y
-las dependencias que hay entre esos componentes.![](./media/image5.png)
+las dependencias que hay entre esos componentes.
 
 -   Una maquina cliente podrá enviar un mensaje al servidor.
 
 -   El servidor receptará y procesara el mensaje.
-
-<span id="h.3as4poj" class="anchor"></span>
 
 Vista de Implementación
 =======================
@@ -434,15 +384,10 @@ Vista de Implementación
 
 -   **Diagrama de Despliegue:**
 
-> ![](./media/image6.png)
->
-> <span id="h.1pxezwc" class="anchor"></span>La vista de implementación
-> representa la composición física de la aplicación en términos de
-> subsistemas de aplicación, y Elementos de Implementación (directorios
-> y archivos , incluyendo el código fuente , los datos y los archivos
-> ejecutables ) .<span id="h.90s9vyjodamf" class="anchor"><span
-> id="h.7qqvt0y0vtvm" class="anchor"><span id="h.3o7alnk"
-> class="anchor"></span></span></span>
+> La vista de implementación representa la composición física de la
+> aplicación en términos de subsistemas de aplicación, y Elementos de
+> Implementación (directorios y archivos , incluyendo el código fuente ,
+> los datos y los archivos ejecutables ) .
 
 Tamaño y rendimiento
 ====================
@@ -452,10 +397,8 @@ Rendimiento:
 -   Tiempo de recepción del mensaje por parte del servidor: menos de 10
     segundos.
 
-<span id="h.23ckvvd" class="anchor"></span>
-
-Calidad. 
-=========
+Calidad.
+========
 
 Los siguientes objetivos de calidad han sido identificados:
 
